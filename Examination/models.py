@@ -22,9 +22,9 @@ class Exam(models.Model):
         MID_SEM = 'MS', 'MID SEMESTER'
         END_SEM = 'ES', 'END SEMESTER'
         INTERMEDIATE = 'IM', 'INTERMEDIATE'
-    type = models.CharField(choices=Type.choices)
+    type = models.CharField(max_length=2,choices=Type.choices)
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE, related_name='subject')
     date = models.DateField()
     marks = models.IntegerField()
     semester = models.IntegerField(choices=Semester.choices)
-    branch = models.ForeignKey(Branch, on_delete=models.CASCADE, related_name='branch')
+    branch = models.ForeignKey(Branch, on_delete=models.CASCADE, related_name='exam_branch')
