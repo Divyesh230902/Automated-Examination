@@ -1,3 +1,4 @@
+import uuid
 from django.db import models
 from Dtail.models import Branch
 
@@ -22,9 +23,14 @@ class Exam(models.Model):
         MID_SEM = 'MS', 'MID SEMESTER'
         END_SEM = 'ES', 'END SEMESTER'
         INTERMEDIATE = 'IM', 'INTERMEDIATE'
+
     type = models.CharField(max_length=2,choices=Type.choices)
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE, related_name='subject')
     date = models.DateField()
     marks = models.IntegerField()
     semester = models.IntegerField(choices=Semester.choices)
     branch = models.ForeignKey(Branch, on_delete=models.CASCADE, related_name='exam_branch')
+
+class AswerSheet(models.Model):
+    qr_code = models.UUIDField(unique=True,default=uuid.uuid4)
+    
