@@ -1,6 +1,6 @@
 import uuid
 from django.db import models
-from Dtail.models import Branch
+from Dtail.models import Branch, Professor, Student
 
 # Create your models here.
 
@@ -31,6 +31,12 @@ class Exam(models.Model):
     semester = models.IntegerField(choices=Semester.choices)
     branch = models.ForeignKey(Branch, on_delete=models.CASCADE, related_name='exam_branch')
 
-class AswerSheet(models.Model):
+class AnswerSheet(models.Model):
     qr_code = models.UUIDField(unique=True,default=uuid.uuid4)
     
+class StudentAnswersheet(models.Model):
+    student = models.ForeignKey(Student,on_delete=models.CASCADE)
+    answersheet = models.ForeignKey(AnswerSheet, on_delete=models.CASCADE)
+    exam = models.ForeignKey(Exam,on_delete=models.CASCADE)
+    invigilator = models.ForeignKey(Professor,on_delete=models.CASCADE)
+    date = models.DateTimeField()
