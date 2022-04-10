@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'Dtail',
     'rest_framework',
     'Examination',
+    'Evaluation'
 ]
 
 MIDDLEWARE = [
