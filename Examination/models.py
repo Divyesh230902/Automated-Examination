@@ -40,3 +40,7 @@ class StudentAnswersheet(models.Model):
     exam = models.ForeignKey(Exam,on_delete=models.CASCADE)
     invigilator = models.ForeignKey(Professor,on_delete=models.CASCADE)
     date = models.DateTimeField(auto_now_add = True)
+
+class Invigilagtor(models.Model):
+    exam = models.ForeignKey(Exam,on_delete=models.CASCADE)
+    professor = models.ForeignKey(Professor,on_delete=models.CASCADE)
