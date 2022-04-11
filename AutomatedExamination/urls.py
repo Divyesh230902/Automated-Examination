@@ -22,5 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('Dtail.urls')),
     path('exam/', include('Examination.urls')),
+    path('eval/',include("Evaluation.urls")),
     path('api-token-auth/', CustomAuthToken.as_view()),
 ]

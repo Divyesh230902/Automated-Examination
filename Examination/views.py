@@ -10,8 +10,8 @@ from .models import Invigilagtor
 
 # Create your views here.
 class StudentAnswersheetAPIview(generics.CreateAPIView):
-    # authentication_classes = [TokenAuthentication]
-    # permission_classes = [IsAuthenticated]
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
     serializer_class = StudentAnswerSheetSerializer
 
 
