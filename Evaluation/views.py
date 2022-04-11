@@ -7,6 +7,6 @@ from Evaluation.serializers import MarksObtainedSerializer
 # Create your views here.
 
 class MarksObtainedAPIView(generics.CreateAPIView):
-    # authentication_classes = [TokenAuthentication]
-    # permission_classes = [IsAuthenticated]
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
     serializer_class = MarksObtainedSerializer
