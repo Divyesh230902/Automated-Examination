@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'Dtail',
     'rest_framework',
     'Examination',
-    'Evaluation'
+    'Evaluation',
+    'rest_framework.authtoken'
 ]
 
 MIDDLEWARE = [
