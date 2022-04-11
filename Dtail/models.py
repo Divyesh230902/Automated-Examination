@@ -19,7 +19,7 @@ class Branch(models.Model):
 
 class Professor(models.Model):
     id = models.IntegerField(primary_key=True)
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE,related_name="professor")
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     department = models.ForeignKey(Department, on_delete=models.CASCADE, related_name='department')
