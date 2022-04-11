@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'Examination',
     'Evaluation',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
     "corsheaders",
 ]
 
