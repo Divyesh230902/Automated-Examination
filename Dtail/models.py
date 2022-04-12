@@ -40,4 +40,8 @@ class Student(models.Model):
     created_at = models.DateField(auto_now=True)
 
     def __str__(self):
+        return self.fullname
+
+    @property
+    def fullname(self):
         return f"{self.first_name} {self.last_name}"

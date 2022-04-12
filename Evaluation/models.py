@@ -4,7 +4,7 @@ from Examination.models import StudentAnswersheet
 
 # Create your models here.
 class MarksObtained(models.Model):
-    answersheet = models.ForeignKey(StudentAnswersheet,on_delete=models.CASCADE)
+    answersheet = models.ForeignKey(StudentAnswersheet, on_delete=models.CASCADE, related_name='evaluation')
     marks = models.SmallIntegerField()
     examiner = models.ForeignKey(Professor,on_delete=models.CASCADE)
     checked_at = models.DateTimeField(auto_now_add = True)
